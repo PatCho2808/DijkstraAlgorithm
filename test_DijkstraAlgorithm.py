@@ -37,4 +37,4 @@ class TestDijkstraAlgorithm(TestCase):
         self.assertEqual(17, dijkstra.get_shortest_path(graph.get_vertex(5)))
         self.assertEqual(1, dijkstra.get_shortest_path(graph.get_vertex(7)))
         self.assertEqual(7, dijkstra.get_shortest_path(graph.get_vertex(3)))
-        
+
