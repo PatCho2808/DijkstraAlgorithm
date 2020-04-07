@@ -17,8 +17,8 @@ class Graph:
         if not head:
             head = self.create_vertex(head_nr)
         new_edge = Edge(tail, head, length)
-        tail.add_edge(new_edge)
-        head.add_edge(new_edge)
+        tail.add_edge_from(new_edge)
+        head.add_edge_to(new_edge)
         self.edges.append(new_edge)
 
     def create_vertex(self, nr):
@@ -38,5 +38,11 @@ class Graph:
         for edge in self.edges:
             if edge.get_tail() == tail and edge.get_head() == head:
                 return edge
+
+    def get_vertices(self):
+        return self.vertices
+
+    def get_edges(self):
+        return self.edges
 
 

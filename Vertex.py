@@ -1,23 +1,27 @@
 class Vertex:
     def __init__(self, number):
         self.number = number
-        self.edges = []
+        self.edges_to = []
+        self.edges_from = []
 
     def get_number(self):
         return self.number
 
-    def add_edge(self, edge):
-        self.edges.append(edge)
+    def add_edge_to(self, edge):
+        self.edges_to.append(edge)
+
+    def add_edge_from(self, edge):
+        self.edges_from.append(edge)
 
     def get_next_vertices(self):
         next_vertices = []
-        for edge in self.edges:
+        for edge in self.edges_from:
             next_vertex = edge.get_head()
-            if next_vertex != self:
-                next_vertices.append(next_vertex)
+            next_vertices.append(next_vertex)
         return next_vertices
 
-    def get_edges(self):
-        return self.edges
+    def get_edges_from(self):
+        return self.edges_from
+
 
 
